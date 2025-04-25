@@ -431,7 +431,7 @@ class Graph:
         available = [idx for idx in in_degree if in_degree[idx] == 0]
 
         while available:
-            available.sort(key=lambda idx: -self.vertices[idx].depth)
+            available.sort(key=lambda idx: (-self.vertices[idx].depth, self.vertices[idx].label))
             semester = []
             next_available = []
 
