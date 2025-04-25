@@ -469,9 +469,10 @@ def main():
 
     for _ in range(num_edges):
         from_label, to_label = sys.stdin.readline().strip().split()
-        from_idx = label_to_index[from_label]
-        to_idx = label_to_index[to_label]
-        graph.add_edge(from_idx, to_idx)
+        if from_label in label_to_index and to_label in label_to_index:
+            from_idx = label_to_index[from_label]
+            to_idx = label_to_index[to_label]
+            graph.add_edge(from_idx, to_idx)
 
     ####################################################################################
     # DO NOT CHANGE ANYTHING BELOW THIS
